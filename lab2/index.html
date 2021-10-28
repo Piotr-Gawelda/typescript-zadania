@@ -25,26 +25,92 @@
             <div class="audioKey" data-key='s'>S</div>
             <div class="audioKey" data-key='d'>D</div>
             <div class="audioKey" data-key='f'>F</div>
+            <div class="audioKey" data-key='g'>G</div>
         </div>
-        <audio src="sounds/clap.wav" data-sound-key="q"></audio>
-        <audio src="sounds/boom.wav" data-sound-key="w"></audio>
-        <audio src="sounds/hihat.wav" data-sound-key="e"></audio>
-        <audio src="sounds/kick.wav" data-sound-key="r"></audio>
-        <audio src="sounds/openhat.wav" data-sound-key="a"></audio>
-        <audio src="sounds/ride.wav" data-sound-key="s"></audio>
-        <audio src="sounds/snare.wav" data-sound-key="d"></audio>
-        <audio src="sounds/tink.wav" data-sound-key="f"></audio>
-        <audio src="sounds/tom.wav" data-sound-key="t"></audio>
+        <div id="audios">
+            <audio src="sounds/clap.wav" data-sound-key="q"></audio>
+            <audio src="sounds/boom.wav" data-sound-key="w"></audio>
+            <audio src="sounds/hihat.wav" data-sound-key="e"></audio>
+            <audio src="sounds/kick.wav" data-sound-key="r"></audio>
+            <audio src="sounds/openhat.wav" data-sound-key="a"></audio>
+            <audio src="sounds/ride.wav" data-sound-key="s"></audio>
+            <audio src="sounds/snare.wav" data-sound-key="d"></audio>
+            <audio src="sounds/tink.wav" data-sound-key="f"></audio>
+            <audio src="sounds/tom.wav" data-sound-key="t"></audio>
+            <audio src="sounds/clap.wav" data-sound-key="g"></audio>
+        </div>
+
 
         <div class="channels">
             <div class="channelButtons" data-channel="channel-1">
-                <button class="record">Record</button>
-                <button class="play">Play</button>
+                <div>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <button id="record-1">Record</button>
+                </div>
+                <div>
+                    <button id="play-1">Play</button>
+                </div>
+                <div>
+                    <div id="line-1" class="line">
+                        <div id="notes-1" class="notes">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="channelButtons" data-channel="channel-2">
-                <button class="record">Record</button>
-                <button class="play">Play</button>
+                <div>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <button id="record-2">Record</button>
+                </div>
+                <div>
+                    <button id="play-2">Play</button>
+                </div>
+                <div>
+                    <div id="line-2" class="line">
+                        <div id="notes-2" class="notes">
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="channelButtons" data-channel="channel-3">
+                <div>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <button id="record-3">Record</button>
+                </div>
+                <div>
+                    <button id="play-3">Play</button>
+                </div>
+                <div>
+                    <div id="line-3" class="line">
+                        <div id="notes-3" class="notes">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="channelButtons" data-channel="channel-4">
+                <div>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <button id="record-4">Record</button>
+                </div>
+                <div>
+                    <button id="play-4">Play</button>
+                </div>
+                <div>
+                    <div id="line-4" class="line">
+                        <div id="notes-4" class="notes">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <script src="index.js"></script>
