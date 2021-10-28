@@ -41,6 +41,7 @@ body {
     align-items: center;
     margin: 10px;
     cursor: pointer;
+    background: #eaeaea;
 }
 
 .audioKey:hover {
@@ -56,6 +57,27 @@ body {
 
 .channelButtons {
     margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.channelButtons > div {
+    margin: 0px 10px;
+}
+
+.line {
+    width: 40vw;
+    border-top: 2px solid #dadada;
+}
+.notes {
+    font-size: 20px;
+    margin-top: -15px;
+}
+.notes span {
+    margin: 0px 5px;
+    padding: 0px 5px;
+    border-right: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
 }
 
 .channelButtons button {
@@ -73,4 +95,9 @@ body {
     color: white;
     border: 1px solid white;
     transition: .4s;
+}
+.active {
+    background-color: red !important;
+    color: white;
+    border: 1px solid white;
 }
