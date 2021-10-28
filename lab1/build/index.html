@@ -8,24 +8,43 @@
     <title>Typescript</title>
 </head>
 <body>
-    <!-- test -->
     <div>
         <h3>Podaj ilosc pol</h3>
-        <input type="text" id="enterNumber">
+        <input type="number" id="enterNumber" min="1">
     </div>
 
     <div class="data">
         <h3>Podaj liczby</h3>
-        <input type="text" id="data1"/>
-        <input type="text" id="data2"/>
-        <input type="text" id="data3"/>
-        <input type="text" id="data4"/>
+        <div id="input-wrapper">
+        </div>
+        <div id="button-wrapper">
+        </div>
     </div>
     <div class="calc">
-        <div>Sum <input type="text" id="sum"/></div>
-        <div>Avg <input type="text" id="avg"/></div>
-        <div>Min <input type="text" id="min"/></div>
-        <div>Max <input type="text" id="max"/></div>
+        <div class="two-column">
+            <div>
+                Sum: 
+            </div>
+           <div type="text" id="sum" class="loader"></div>
+        </div>
+        <div class="two-column">
+            <div>
+                Avg: 
+            </div>
+           <div type="text" id="avg" class="loader"></div>
+        </div>
+        <div class="two-column">
+            <div>
+                Min: 
+            </div>
+           <div type="text" id="min" class="loader"></div>
+        </div>
+        <div class="two-column">
+            <div>
+                Max: 
+            </div>
+           <div type="text" id="max" class="loader"></div>
+        </div>
     </div>
 
     <script src="index.js"></script>
