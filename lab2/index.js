@@ -1,38 +1,29 @@
-var kickSound;
-var clapSound;
-var channel1 = [];
-appStart();
-function appStart() {
-    document.addEventListener('keypress', onKeyPress);
-    var btnPlayChannel1 = document.querySelector('#playChannel1');
-    btnPlayChannel1.addEventListener('click', onPlayChannel1);
-    getAudioElements();
-}
-function onPlayChannel1() {
-    channel1.forEach(function (sound) {
-        setTimeout(function () { return playSound(sound.key); }, sound.time);
-    });
-}
-function getAudioElements() {
-    kickSound = document.querySelector('[data-sound="kick"]');
-    clapSound = document.querySelector('[data-sound="clap"]');
-}
-function onKeyPress(ev) {
-    var key = ev.key;
-    var time = ev.timeStamp;
-    channel1.push({ key: key, time: time });
-    playSound(key);
-    console.log(channel1);
-}
-function playSound(key) {
-    switch (key) {
-        case 'a':
-            kickSound.currentTime = 0;
-            kickSound.play();
-            break;
-        case 's':
-            clapSound.currentTime = 0;
-            clapSound.play();
-            break;
+var AudioElement = /** @class */ (function () {
+    function AudioElement(element, key) {
+        this.element = element;
+        this.key = key;
     }
-}
+    AudioElement.prototype.play = function () {
+        this.element.currentTime = 0;
+        this.element.play();
+    };
+    return AudioElement;
+}());
+var Channel = /** @class */ (function () {
+    function Channel(id, record, note) {
+        this.id = id;
+        this.record = record;
+        this.note = note;
+        this.notes = [];
+    }
+    return Channel;
+}());
+var App = /** @class */ (function () {
+    function App() {
+        this.appStart();
+    }
+    App.prototype.appStart = function () {
+    };
+    return App;
+}());
+var app = new App();
