@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 body {
   background: linear-gradient(#e66465, #e03333);
@@ -18,7 +19,7 @@ body {
       display: flex;
       justify-content: space-between;
       input {
-        width: 85%;
+        width: 80%;
         height: 40px;
         border: none;
         border-radius: 20px;
@@ -28,9 +29,9 @@ body {
         border-radius: 20px;
         height: 40px;
         border: none;
-        width: 10%;
+        width: 15%;
         text-align: center;
-        font-weight: 600;
+        background-color: white;
         &:hover {
           cursor: pointer;
         }
@@ -58,6 +59,11 @@ body {
         font-size: 20px;
         color:white;
       }
+      hr {
+        color: white;
+        border: 1px solid white;
+        margin: 14px 0;
+      }
       .sub-info {
         display: flex;
         justify-content: center;
@@ -65,7 +71,7 @@ body {
       }
       .sub-info-2 {
         border-left: 1px solid white;
-        padding: 10px;
+        padding: 20px;
       }
       .city-name {
         font-weight: bold;
@@ -74,11 +80,15 @@ body {
       .weather {
         font-weight: bold;
         font-size: 30px;
+        margin-bottom: 20px;
       }
       .temperature {
-        margin-right: 10px;
+        margin-right: 20px;
         font-size: 30px;
       }
     }
+  }
+  button, input {
+    outline: none;
   }
 }
