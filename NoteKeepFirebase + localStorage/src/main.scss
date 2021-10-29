@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 body {
   height: 100vh;
@@ -17,13 +18,22 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 1px 1px 1px 1px #aaa9a9;
-      border-radius: 10px;
       input {
         width: 100%;
         height: 40px;
         padding-left: 20px;
-        border: none;
+        border: 1px solid #aaa9a9;
+        border-radius: 5px;
+        outline: none;
+      }
+      textarea {
+        width: 600px;
+        border: 1px solid #aaa9a9;
+        border-radius: 5px;
+        outline: none;
+        padding: 20px;
+        font-size: 13px;
+        margin: 10px 0;
       }
     }
     #note-container {
@@ -33,6 +43,7 @@ body {
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
+      transition: .4s;
       .note-box {
         border-radius: 10px;
         background-color: #FFF475;
@@ -43,6 +54,7 @@ body {
         height: 300px;
         display: flex;
         flex-direction: column;
+        transition: .4s;
         .note-title {
           font-weight: 600;
           padding-bottom: 20px;
@@ -51,7 +63,44 @@ body {
           line-height: 22px;
           padding-bottom: 20px;
         }
+        div:nth-of-type(4) {
+          button {
+            margin-top: 20px;
+            background: none;
+            background-color: #FFF475;
+            color: #000;
+            border: 1px solid #000;
+            border-radius: 5px;
+            padding: 8px 12px;
+            transition: .4s;
+            font-size: 13px;
+            &:hover {
+              transition: .4s;
+              background-color: #000;
+              color: #FFF475;
+              border: 1px solid transparent;
+            }
+          }
+        }
+      }
+    }
+    #addNote {
+      padding: 10px 20px;
+      background: none;
+      border: 1px solid #aaa9a9;
+      color: #1d1c1c;
+      border-radius: 5px;
+      font-size: 13px;
+      transition: .4s;
+      &:hover {
+        background-color: #706c6c;
+        color: #ebe2e2;
+        transition: .4s;
       }
     }
   }
+}
+
+button {
+  cursor: pointer;
 }

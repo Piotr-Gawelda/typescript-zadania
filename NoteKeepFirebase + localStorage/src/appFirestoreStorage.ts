@@ -1,40 +1,32 @@
 import "./main.scss"
 import firebase from 'firebase';
 import {firebaseConfig} from "./config"
+import { AppStorage } from "./appStorage";
+import { Note } from "./note";
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
 
-const note = {
-    title: 'Test note',
-    content: 'Test note content'
-}
-
-export class AppFirestoreStorage {
+export class AppFirestoreStorage implements AppStorage {
     
     constructor() {
         
     }
 
-    async addNote(note: any) {
-        const res = await db.collection('notes').add(note)
+    async addNote(note: any): Promise<string> {
+        const res = await db.collection('notes').add(Object.assign({}, note))
+        return res.id;
     }
     
     async deleteNote(id: string) {
-        const res = await db.collection('notes').doc(id).delete();
+        await db.collection('notes').doc(id).delete();
     }
 
-    async updateNote(id: string, note: any) {
-        const res = await db.collection('notes').doc(id).update(note);
+    async getNotes(): Promise<Note[]> {
+        const snapshot = await firebase.firestore().collection('notes').get()
+        return snapshot.docs.map(doc => {
+            var date = new Date(doc.data().created?.seconds * 1000);
+            return { id: doc.id, title: doc.data().title, created: date, content: doc.data().content }
+         });
     }
-    
-    async getNote(id: string) {
-        return db.collection('notes').doc(id).get().then(res => ({id: res.id, data: res.data()}))
-    }
-    
-    // getNotes().then(res => console.log(res));
-    // async function getNotes() {
-    //     return db.collection('notes').get().then(res => ({size: res.size, docs: res.docs}))
-    // }
-   
 }
